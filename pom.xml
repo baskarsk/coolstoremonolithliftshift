@@ -60,7 +60,7 @@
 						    <server-config>standalone-full.xml</server-config>
 						    <resources>
 						<!-- TODO: Add Datasource definition here -->
-								<resource>
+							<!--	<resource>
 								    <addIfAbsent>true</addIfAbsent>
 								    <address>subsystem=datasources,data-source=CoolstoreDS</address>
 								    <properties>
@@ -72,20 +72,20 @@
 								        <user-name>sa</user-name>
 								        <password>sa</password>
 								    </properties>
-								</resource> 
-							<!--	<resource>
+								</resource>  -->
+								<resource>
 								    <addIfAbsent>true</addIfAbsent>
-								    <address>subsystem=datasources,data-source=CoolstoreDS</address>
+								    <address>subsystem=datasources,data-source=${env.OPENSHIFT_POSTGRESQL_DATASOURCE}</address>
 								    <properties>
-								        <jndi-name>java:jboss/datasources/CoolstoreDS</jndi-name>
+								        <jndi-name>java:jboss/datasources/${env.OPENSHIFT_POSTGRESQL_DATASOURCE}</jndi-name>
 								        <enabled>true</enabled>
-								        <connection-url>jdbc:postgresql://${env.OPENSHIFT_POSTGRESQL_DB_HOST}:${env.OPENSHIFT_POSTGRESQL_DB_PORT}/${env.OPENSHIFT_APP_NAME};DB_CLOSE_DELAY=-1</connection-url>
+								        <connection-url>jdbc:postgresql://${env.OPENSHIFT_POSTGRESQL_DB_HOST}:${env.OPENSHIFT_POSTGRESQL_DB_PORT}/${env.OPENSHIFT_DB_NAME};DB_CLOSE_DELAY=-1</connection-url>
 								        <driver-class>org.postgresql.Driver</driver-class>
 								        <driver-name>postgresql</driver-name>
-								        <user-name>${env.OPENSHIFT_POSTGRESQL_USER}</user-name>
-								        <password>${env.OPENSHIFT_POSTGRESQL_PASSWORD}</password>
+								        <user-name>${env.OPENSHIFT_POSTGRESQL_DB_USERNAME}</user-name>
+								        <password>${env.OPENSHIFT_POSTGRESQL_DB_PASSWORD}</password>
 								    </properties>
-								</resource> -->
+								</resource> 
 						<!-- TODO: Add JMS Topic definition here -->
 								<resource>
 									<address>subsystem=messaging-activemq,server=default,jms-topic=orders</address>
