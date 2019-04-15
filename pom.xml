@@ -74,12 +74,12 @@
 								    </properties>
 								</resource>  -->
 								<resource>
-								    <addIfAbsent>true</addIfAbsent>
+								    <!--<addIfAbsent>true</addIfAbsent> -->
 								    <address>subsystem=datasources,data-source=${env.OPENSHIFT_POSTGRESQL_DATASOURCE}</address>
 								    <properties>
 								        <jndi-name>java:jboss/datasources/${env.OPENSHIFT_POSTGRESQL_DATASOURCE}</jndi-name>
 								        <enabled>true</enabled>
-								        <connection-url>jdbc:postgresql://${env.OPENSHIFT_POSTGRESQL_DB_HOST}:${env.OPENSHIFT_POSTGRESQL_DB_PORT}/${env.OPENSHIFT_DB_NAME};DB_CLOSE_DELAY=-1</connection-url>
+								        <connection-url>jdbc:postgres://${env.OPENSHIFT_POSTGRESQL_DB_HOST}:${env.OPENSHIFT_POSTGRESQL_DB_PORT}/${env.OPENSHIFT_DB_NAME};DB_CLOSE_DELAY=-1</connection-url>
 								        <driver-class>org.postgresql.Driver</driver-class>
 								        <driver-name>postgresql</driver-name>
 								        <user-name>${env.OPENSHIFT_POSTGRESQL_DB_USERNAME}</user-name>
