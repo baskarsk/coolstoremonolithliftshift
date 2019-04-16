@@ -73,7 +73,7 @@
 								        <password>sa</password>
 								    </properties>
 								</resource>  -->
-								<resource>
+							<!--	<resource>
 								    <addIfAbsent>true</addIfAbsent>
 								    <address>subsystem=datasources,data-source=${env.OPENSHIFT_POSTGRESQL_DATASOURCE}</address>
 								    <properties>
@@ -85,7 +85,7 @@
 								        <user-name>${env.OPENSHIFT_POSTGRESQL_DB_USERNAME}</user-name>
 								        <password>${env.OPENSHIFT_POSTGRESQL_DB_PASSWORD}</password>
 								    </properties>
-								</resource> 
+								</resource>  -->
 						<!-- TODO: Add JMS Topic definition here -->
 								<resource>
 									<address>subsystem=messaging-activemq,server=default,jms-topic=orders</address>
