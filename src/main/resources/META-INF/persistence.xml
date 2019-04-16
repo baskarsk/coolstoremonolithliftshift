@@ -8,11 +8,8 @@
         <jta-data-source>java:jboss/datasources/CoolstoreDS</jta-data-source>
         <properties>
             <!-- <property name="javax.persistence.schema-generation.database.action" value="none"/> -->
-<<<<<<< HEAD
+
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
-=======
-            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
->>>>>>> a0f7d30cac15049b8ddb6b47ce7205d8748435b5
             <property name="hibernate.show_sql" value="false" />
         </properties>
     </persistence-unit>
