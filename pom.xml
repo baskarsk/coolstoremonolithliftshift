@@ -57,7 +57,7 @@
 	    		<version>1.2.1.Final</version>
 			    		<configuration>
 						    <jboss-home>${env.JBOSS_HOME}</jboss-home>
-						    <server-config>standalone-full.xml</server-config>
+						    <server-config>standalone-openshift.xml</server-config>
 						    <resources>
 						<!-- TODO: Add Datasource definition here -->
 							<!--	<resource>
@@ -73,13 +73,18 @@
 								        <password>sa</password>
 								    </properties>
 								</resource>  -->
+<<<<<<< HEAD
 							<!--	<resource>
 								    <addIfAbsent>true</addIfAbsent>
+=======
+								<resource>
+								    <!--<addIfAbsent>true</addIfAbsent> -->
+>>>>>>> a0f7d30cac15049b8ddb6b47ce7205d8748435b5
 								    <address>subsystem=datasources,data-source=${env.OPENSHIFT_POSTGRESQL_DATASOURCE}</address>
 								    <properties>
 								        <jndi-name>java:jboss/datasources/${env.OPENSHIFT_POSTGRESQL_DATASOURCE}</jndi-name>
 								        <enabled>true</enabled>
-								        <connection-url>jdbc:postgresql://${env.OPENSHIFT_POSTGRESQL_DB_HOST}:${env.OPENSHIFT_POSTGRESQL_DB_PORT}/${env.OPENSHIFT_DB_NAME};DB_CLOSE_DELAY=-1</connection-url>
+								        <connection-url>jdbc:postgres://${env.OPENSHIFT_POSTGRESQL_DB_HOST}:${env.OPENSHIFT_POSTGRESQL_DB_PORT}/${env.OPENSHIFT_DB_NAME};DB_CLOSE_DELAY=-1</connection-url>
 								        <driver-class>org.postgresql.Driver</driver-class>
 								        <driver-name>postgresql</driver-name>
 								        <user-name>${env.OPENSHIFT_POSTGRESQL_DB_USERNAME}</user-name>
