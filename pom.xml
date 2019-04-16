@@ -76,7 +76,7 @@
 							<!--	<resource>
 								    <addIfAbsent>true</addIfAbsent>
 									<resource>
-								    <!--<addIfAbsent>true</addIfAbsent> 
+								   <addIfAbsent>true</addIfAbsent> 
 									<address>subsystem=datasources,data-source=${env.OPENSHIFT_POSTGRESQL_DATASOURCE}</address>
 								    <properties>
 								        <jndi-name>java:jboss/datasources/${env.OPENSHIFT_POSTGRESQL_DATASOURCE}</jndi-name>
