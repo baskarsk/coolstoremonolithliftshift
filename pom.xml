@@ -50,7 +50,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.0</version>
             </plugin>
-<!-- TODO: Add wildfly plugin here -->
+<!-- TODO: Add 	 plugin here -->
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 	    		<artifactId>wildfly-maven-plugin</artifactId>
@@ -60,7 +60,7 @@
 						    <server-config>standalone-openshift.xml</server-config>
 						    <resources>
 						<!-- TODO: Add Datasource definition here -->
-							<!--	<resource>
+								<resource>
 								    <addIfAbsent>true</addIfAbsent>
 								    <address>subsystem=datasources,data-source=CoolstoreDS</address>
 								    <properties>
@@ -72,7 +72,7 @@
 								        <user-name>sa</user-name>
 								        <password>sa</password>
 								    </properties>
-								</resource>  -->
+								</resource> 
 							<!--	<resource>
 								    <addIfAbsent>true</addIfAbsent>
 									<resource>
