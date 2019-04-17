@@ -55,11 +55,11 @@
 				<groupId>org.wildfly.plugins</groupId>
 	    		<artifactId>wildfly-maven-plugin</artifactId>
 	    		<version>1.2.1.Final</version>
-			    	<!--	<configuration>
+			    		<configuration>
 						    <jboss-home>${env.JBOSS_HOME}</jboss-home>
 						    <server-config>standalone.xml</server-config>
 						    <resources>
-						 TODO: Add Datasource definition here 
+						 <!--TODO: Add Datasource definition here 
 								<resource>
 								    <addIfAbsent>true</addIfAbsent>
 								    <address>subsystem=datasources,data-source=CoolstoreDS</address>
