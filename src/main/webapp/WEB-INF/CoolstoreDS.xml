@@ -7,7 +7,7 @@
     <datasource jndi-name="java:jboss/datasources/CoolstoreDS"
         pool-name="CoolstoreDS" enabled="true" use-java-context="true">
         <connection-url>jdbc:h2:mem:CoolstoreDS;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
-        <driver>h2</driver>
+        <driver>org.h2.Driver</driver>
         <security>
             <user-name>sa</user-name>
             <password>sa</password>
