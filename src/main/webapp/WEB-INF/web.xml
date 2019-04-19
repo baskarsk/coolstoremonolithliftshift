@@ -3,7 +3,7 @@
 		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 		 version="3.0">
 	<distributable />
-	<resource-ref>
+	<!--<resource-ref>
 		  <description>
 			Resource reference to a factory for java.sql.Connection
 			instances that may be used for talking to a particular
@@ -19,5 +19,5 @@
 			Container
 		  </res-auth>
 		  <jndi-name>"java:/CoolstoreDS"</jndi-name>
-	</resource-ref>
+	</resource-ref> -->
 </web-app>
