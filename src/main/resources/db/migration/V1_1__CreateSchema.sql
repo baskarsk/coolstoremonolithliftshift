@@ -4,13 +4,7 @@
 
 --create table ORDER_ITEMS (  ID int8 not null,productId varchar(255),quantity int4 not null,ORDER_ID int8,primary key (ID));
 
-create table PRODUCT_CATALOG (
-    itemId varchar(255) not null,
-    description text,
-    name varchar(80),
-    price float8,
-    primary key (itemId)
-);
+--create table PRODUCT_CATALOG (  itemId varchar(255) not null,description text,name varchar(80),price float8,primary key (itemId));
 
 alter table ORDER_ITEMS
     add constraint FK2BFF474F65938E8
