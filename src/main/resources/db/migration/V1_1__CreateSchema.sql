@@ -11,4 +11,4 @@ alter table ORDER_ITEMS
     foreign key (ORDER_ID)
     references ORDERS;
 
-create sequence hibernate_sequence;
+-- create sequence hibernate_sequence;
