@@ -1,3 +1,43 @@
+
+# Steps followed to do lift and shift with minimal modification:
+
+1. Compile and generate the code from the application workspace directory.
+    "mvn clean package -Popenshift"
+
+2. Create a project.
+    oc new-project coolstore --display-name="Cool store monolith"   
+
+3. Create a new-build with jboss as base image.
+    oc new-build jboss-eap71-openshift:latest --binary=true --name="coolstore"
+
+4. Start the build with generated binary image.
+    oc start-build coolstore --from-file=deployments/ROOT.war --wait
+    
+5. Create a app name
+    oc new-app coolstore 
+    
+6. Expose the service.
+    oc expose svc coolstore
+    
+7. Describe the route.
+    oc describe route coolstore
+    
+8. Create Postgresql database.
+   oc new-app -e POSTGRESQL_USER=coolstore -e POSTGRESQL_PASSWORD=coolstore123 -e POSTGRESQL_DATABASE=monolith --name=coolstore-postgresql postgresql
+
+9. Set postgresql environment.
+  oc set env dc/coolstore -e DB_SERVICE_PREFIX_MAPPING=coolstore-postgresql=DB \
+  -e DB_JNDI=java:jboss/datasources/CoolstoreDS \
+  -e DB_DATABASE=monolith \
+  -e DB_USERNAME=coolstore \
+  -e DB_PASSWORD=coolstore123
+
+10. Get in to the postgresql pod.
+    oc rsh dc/coolstore-postgresql
+    
+    
+    
+
 # CoolStore Monolith
 
 This repository has the complete coolstore monolith built as a Java EE 7 application. To deploy it on OpenShift Container Platform (OCP) follow the instructions below
